@@ -38,9 +38,14 @@ app.post("/api/v1/blogs", (req, res) => {
   );
 });
 
-app.patch("/api/v1/blogs", (req, res)=> {
-    res.status(200).json
-})
+app.patch("/api/v1/blogs", (req, res) => {
+  res.status(200).json({
+    status: "success",
+    data: {
+      blog: "Updated Blog>",
+    },
+  });
+});
 
 const port = 8000;
 app.listen(port, () => {
