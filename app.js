@@ -47,6 +47,13 @@ app.patch("/api/v1/blogs", (req, res) => {
   });
 });
 
+app.delete("/api/v1/blogs", (req, res) => {
+    res.status(200).json({
+        status: "success",
+        data: null
+    })
+});
+
 const port = 8000;
 app.listen(port, () => {
   console.log("ST-BLOG-API is running on port 8000...");
