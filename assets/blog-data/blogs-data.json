@@ -1,32 +1,32 @@
 {
-    "posts": [
-      {
-        "id": "5c88fa8cf4afda39709c2959",
-        "title": "Getting Started with React",
-        "content": "In this tutorial, we'll explore the basics of building a React app...",
-        "author": {
-          "id": 101,
-          "name": "Alice Johnson",
-          "email": "alice@example.com"
-        },
-        "tags": ["react", "javascript"],
-        "categories": ["web development"],
-        "timestamp": "2023-03-15T08:30:00Z"
+  "posts": [
+    {
+      "id": "5c88fa8cf4afda39709c2959",
+      "title": "Getting Started with React",
+      "content": "In this tutorial, we'll explore the basics of building a React app...",
+      "author": {
+        "id": 101,
+        "name": "Alice Johnson",
+        "email": "alice@example.com"
       },
-      {
-        "id": "5c88fa8cf4afda39709c2960",
-        "title": "10 Tips for Efficient Python Coding",
-        "content": "Improve your Python coding skills with these useful tips and tricks...",
-        "author": {
-          "id": 102,
-          "name": "Bob Smith",
-          "email": "bob@example.com"
-        },
-        "tags": ["python", "coding"],
-        "categories": ["coding"],
-        "timestamp": "2023-03-20T10:45:00Z"
+      "tags": ["react", "javascript"],
+      "categories": ["web development"],
+      "timestamp": "2023-03-15T08:30:00Z"
+    },
+    {
+      "id": "5c88fa8cf4afda39709c2960",
+      "title": "10 Tips for Efficient Python Coding",
+      "content": "Improve your Python coding skills with these useful tips and tricks...",
+      "author": {
+        "id": 102,
+        "name": "Bob Smith",
+        "email": "bob@example.com"
       },
-      {
+      "tags": ["python", "coding"],
+      "categories": ["coding"],
+      "timestamp": "2023-03-20T10:45:00Z"
+    },
+    {
       "id": "5c88fa8cf4afda39709c2961",
       "title": "Introduction to Machine Learning",
       "content": "Discover the fundamentals of machine learning and its applications...",
@@ -39,8 +39,8 @@
       "categories": ["technology"],
       "timestamp": "2023-04-02T14:15:00Z"
     },
-  
-      {
+
+    {
       "id": "5c88fa8cf4afda39709c2962",
       "title": "The Art of Frontend Design",
       "content": "Explore the principles and best practices for designing beautiful and effective user interfaces...",
@@ -53,6 +53,5 @@
       "categories": ["web development"],
       "timestamp": "2023-04-10T09:00:00Z"
     }
-    ]
-  }
-  
+  ]
+}

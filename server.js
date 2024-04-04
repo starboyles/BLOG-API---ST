@@ -1,22 +1,21 @@
 const mongoose = require('mongoose');
-const dotenv =  require('dotenv');
+const dotenv = require('dotenv');
 const app = require('./app');
 
-dotenv.config({path: './config.env'});
+dotenv.config({ path: './config.env' });
 const DB = process.env.DATABASE.replace(
-  '<PASSWORD>', 
-  process.env.DATABASE_PASSWORD
-  );
+  '<PASSWORD>',
+  process.env.DATABASE_PASSWORD,
+);
 
 mongoose
-.connect(DB, {
-  useNewUrlParser: true,
-  useUnifiedTopology: true,
-})
-  .then(() =>
-    console.log('DB Connection Successful'));
+  .connect(DB, {
+    useNewUrlParser: true,
+    useUnifiedTopology: true,
+  })
+  .then(() => console.log('DB Connection Successful'));
 
 const port = process.env.PORT || 8000;
 app.listen(port, () => {
-  console.log("ST-BLOG-API running on port ${port}.... ");
+  console.log('ST-BLOG-API running on port ${port}.... ');
 });
