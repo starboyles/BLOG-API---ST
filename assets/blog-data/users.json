@@ -1,13 +1,12 @@
 [
     {
-      "_id": "5c8a1f4e2f8fb814b56fa185",
       "name": "Kwame Gyamfi",
       "email": "jennifer@example.com",
+      "role": "user",
       "active": true,
       "password": "$2a$12$XCXvvlhRBJ8CydKH09v1v.jpg0hB9gVVfMVEoz4MsxqL9zb5PrF42"
     },
     {
-      "_id": "5c8a20d32f8fb814b56fa187",
       "name": "Eliana Shirrer",
       "email": "eliana@example.com",
       "role": "user",
@@ -15,49 +14,48 @@
       "password": "$2a$12$Jb/ILhdDV.ZpnPMu19xfe.NRh5ntE2LzNMNcsty05QWwRbmFFVMKO"
     },
     {
-      "_id": "5c8a21d02f8fb814b56fa189",
-      "name": "Steve",
+      "name": "Steve Arye",
       "email": "steve@example.com",
+      "role": "user",
       "active": true,
       "password": "$2a$12$q7v9dm.S4DvqhAeBc4KwduedEDEkDe2GGFGzteW6xnHt120oRpkqm"
     },
     {
-      "_id": "5c8a21f22f8fb814b56fa18a",
-      "name": "Aarav ",
+      "name": "Aarav Arye",
       "email": "aarav@example.com",
+      "role": "user",
       "active": true,
       "password": "$2a$12$lKWhzujFvQwG4m/X3mnTneOB3ib9IYETsOqQ8aN5QEWDjX6X2wJJm"
     },
     {
-      "_id": "5c8a22c62f8fb814b56fa18b",
       "name": "Miyah Myles",
       "email": "miyah@example.com",
+      "role": "user",
       "active": true,
       "password": "$2a$12$.XIvvmznHQSa9UOI639yhe4vzHKCYO1vpTUZc4d45oiT4GOZQe1kS"
     },
     {
-      "_id": "5c8a23412f8fb814b56fa18c",
-      "name": "Ben",
+      "name": "Ben Simmons",
       "email": "ben@example.com",
+      "role": "user",
       "active": true,
       "password": "$2a$12$D3fyuS9ETdBBw5lOwceTMuZcDTyVq28ieeGUAanIuLMcSDz6bpfIe"
     },
     {
-      "_id": "5c8a23de2f8fb814b56fa18e",
       "name": "Max Smith",
       "email": "max@example.com",
+      "role": "user",
       "active": true,
       "password": "$2a$12$l5qamwqcqC2NlgN6o5A5..9Fxzr6X.bjx/8j3a9jYUHWGOL99oXlm"
     },
     {
-      "_id": "5c8a24282f8fb814b56fa18f",
       "name": "Isabel Kirkland",
       "email": "isabel@example.com",
+      "role": "user",
       "active": true,
       "password": "$2a$12$IUnwPH0MGFeMuz7g4gtfvOll.9wgLyxG.9C3TKlttfLtCQWEE6GIu"
     },
     {
-      "_id": "5c8a24402f8fb814b56fa190",
       "name": "Alexander Jones",
       "email": "alex@example.com",
       "role": "user",
