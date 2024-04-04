@@ -9,6 +9,7 @@ const blogSchema = new mongoose.Schema({
   title: {
     type: "string",
     required: [true, "A blog must have a title"],
+    trim: true
   },
   duration: {
     type: number,
