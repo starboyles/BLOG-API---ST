@@ -4,7 +4,6 @@
     "title": "Introduction to Machine Learning Algorithms",
     "duration": 10,
     "difficulty": "medium",
-    "summary": "An in-depth overview of popular machine learning algorithms",
     "description": "Machine learning algorithms are the backbone of modern artificial intelligence systems. In this blog post, we delve into various machine learning algorithms, including supervised and unsupervised learning techniques. We discuss their underlying principles, advantages, and limitations. Topics covered include linear regression, logistic regression, decision trees, random forests, support vector machines, k-nearest neighbors, clustering algorithms, neural networks, and more."
   },
   {
@@ -12,7 +11,6 @@
     "title": "Deep Dive into Web Development Frameworks",
     "duration": 8,
     "difficulty": "advanced",
-    "summary": "Exploring popular web development frameworks and their features",
     "description": "In this blog post, we take a comprehensive look at various web development frameworks used by developers worldwide. From frontend frameworks like React, Angular, and Vue.js to backend frameworks like Express.js, Django, and Ruby on Rails, we cover the key features, advantages, and use cases of each framework. Additionally, we discuss the evolving landscape of web development and emerging trends in framework adoption."
   },
   {
@@ -20,7 +18,6 @@
     "title": "Deep Dive into Web Development Frameworks",
     "duration": 8,
     "difficulty": "advanced",
-    "summary": "Exploring popular web development frameworks and their features",
     "description": "In this blog post, we take a comprehensive look at various web development frameworks used by developers worldwide. From frontend frameworks like React, Angular, and Vue.js to backend frameworks like Express.js, Django, and Ruby on Rails, we cover the key features, advantages, and use cases of each framework. Additionally, we discuss the evolving landscape of web development and emerging trends in framework adoption."
   },
   {
@@ -28,7 +25,6 @@
     "title": "Deep Dive into Web Development Frameworks",
     "duration": 8,
     "difficulty": "advanced",
-    "summary": "Exploring popular web development frameworks and their features",
     "description": "In this blog post, we take a comprehensive look at various web development frameworks used by developers worldwide. From frontend frameworks like React, Angular, and Vue.js to backend frameworks like Express.js, Django, and Ruby on Rails, we cover the key features, advantages, and use cases of each framework. Additionally, we discuss the evolving landscape of web development and emerging trends in framework adoption."
   },
   {
@@ -36,7 +32,6 @@
     "title": "Deep Dive into Web Development Frameworks",
     "duration": 8,
     "difficulty": "advanced",
-    "summary": "Exploring popular web development frameworks and their features",
     "description": "In this blog post, we take a comprehensive look at various web development frameworks used by developers worldwide. From frontend frameworks like React, Angular, and Vue.js to backend frameworks like Express.js, Django, and Ruby on Rails, we cover the key features, advantages, and use cases of each framework. Additionally, we discuss the evolving landscape of web development and emerging trends in framework adoption."
   },
   {
@@ -44,7 +39,6 @@
     "title": "Deep Dive into Web Development Frameworks",
     "duration": 8,
     "difficulty": "advanced",
-    "summary": "Exploring popular web development frameworks and their features",
     "description": "In this blog post, we take a comprehensive look at various web development frameworks used by developers worldwide. From frontend frameworks like React, Angular, and Vue.js to backend frameworks like Express.js, Django, and Ruby on Rails, we cover the key features, advantages, and use cases of each framework. Additionally, we discuss the evolving landscape of web development and emerging trends in framework adoption."
   },
   { "id": "3", "title": "Test Blog", "difficulty": "hard" },
