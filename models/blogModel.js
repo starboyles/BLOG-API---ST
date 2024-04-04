@@ -20,10 +20,10 @@ const blogSchema = new mongoose.Schema({
     required: [true, "A blog must have a difficulty"],
     validate: [validator.isDifficulty, 'Provide blog difficulty level']
   },
-
   description: {
     type: string,
     required: [true, "A blog must have a description"],
+    trim: true,
   },
 
 });
