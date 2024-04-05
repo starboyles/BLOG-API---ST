@@ -33,4 +33,6 @@ const importData = async () => {
 };
 
 // DELETING DATA FROM DATABASE
-
+const deleteData = async ()=> {
+    
+}
