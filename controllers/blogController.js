@@ -25,24 +25,24 @@ exports.checkBody = (req, res, next) => {
   next();
 };
 
-exports.getAllBlogs = (req, res) => {
-  console.log(req.requestTime);
-
-  res.status(200).json({
-    status: 'Success',
-    requestedAt: req.requestTime,
-    data: {
-      results: blogs.length,
-      blogs,
-    },
-    catch (err) {
-      res.status(404).json({
-        status: 'fail',
-        message: err
-      });
-    }
-  });
+exports.getAllBlogs = async (req, res) => {
+  try {
+    const blogs = await Blog.find();
+    res.status(200).json({
+      status: 'Success',
+      data: {
+        results: blogs.length,
+        blogs,
+      },
+    });
+  } catch (err) {
+    res.status(404).json({
+      status: 'fail',
+      message: err.message,
+    });
+  }
 };
+
 
 exports.getBlog = async (req, res) => {
   console.log(req.params);
