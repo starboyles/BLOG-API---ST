@@ -20,3 +20,6 @@ mongoose
 const blogs = JSON.parse(
     fs.readFileSync(`${__dirname}/blogs-simple.json`, 'utf-8')
 );
+
+//Importing Data into database
+
