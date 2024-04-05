@@ -15,11 +15,19 @@ mongoose
   })
   .then(() => console.log('DB Connection Successful'));
 
-//Read JSON file
+//READ JSON FILE
 
 const blogs = JSON.parse(
     fs.readFileSync(`${__dirname}/blogs-simple.json`, 'utf-8')
 );
 
-//Importing Data into database
+//IMPORTING DATA INTO DATABASE
 
+const importData = async () => {
+    try{
+
+    }
+    catch(err) {
+        console.log(err);
+    }
+}
