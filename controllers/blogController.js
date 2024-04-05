@@ -34,11 +34,18 @@ exports.getAllBlogs = (req, res) => {
       results: blogs.length,
       blogs,
     },
+    catch (err) {
+      res.status(404).json({
+        status: 'fail',
+        message: err
+      });
+    }
   });
 };
 
-exports.getBlog = (req, res) => {
+exports.getBlog = async (req, res) => {
   console.log(req.params);
+
   const id = req.params.id * 1;
   const blog = blogs.find((el) => el.id === id);
   res.status(200).json({
