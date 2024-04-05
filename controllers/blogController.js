@@ -1,5 +1,6 @@
 const fs = require('fs');
 const blogRouter = require('../routes/blogRoutes');
+const Blog = require('../models/blogModel');
 const filePath =
   '/Users/mac/Desktop/BE/ST-BLOG-API/assets/blog-data/blogs-simple.json';
 const blogs = JSON.parse(fs.readFileSync(filePath, 'utf-8'));
@@ -54,18 +55,21 @@ exports.getBlog = async (req, res) => {
   });
 };
 
-exports.createBlogs = (req, res) => {
-  const newId = blogs[blogs.length - 1].id + 1;
-  const newBlog = Object.assign({ id: newId }, req.body);
-  blogs.push(newBlog);
-  fs.writeFile(filePath, JSON.stringify(blogs), (err) => {
+exports.createBlogs = async (req, res) => {
+  try {
+    const newBlog = await Blog.create(req.body);
     res.status(201).json({
       status: 'Success',
       data: {
         blog: newBlog,
       },
     });
-  });
+  } catch (err) {
+    res.status(400).json({
+      status: 'fail',
+      message: err.message,
+    });
+  }
 };
 
 exports.updateBlog = (req, res) => {
