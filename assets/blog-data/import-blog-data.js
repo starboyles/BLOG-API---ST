@@ -18,21 +18,25 @@ mongoose
 
 //READING JSON FILE
 const blogs = JSON.parse(
-    fs.readFileSync(`${__dirname}/blogs-simple.json`, 'utf-8')
+  fs.readFileSync(`${__dirname}/blogs-simple.json`, 'utf-8'),
 );
 
 //IMPORTING DATA INTO DATABASE
 const importData = async () => {
-    try{
-        await Blog.create(blogs);
-        console.log('Data Successfully Loaded');
-    }
-    catch(err) {
-        console.log(err);
-    }
+  try {
+    await Blog.create(blogs);
+    console.log('Data Successfully Loaded');
+  } catch (err) {
+    console.log(err);
+  }
 };
 
 // DELETING DATA FROM DATABASE
-const deleteData = async ()=> {
-    
-}
+const deleteData = async () => {
+  try {
+    await Blog.deleteMany(blogs);
+    console.log('Data Successfully Deleted');
+  } catch (err) {
+    console.log(err);
+  }
+};
