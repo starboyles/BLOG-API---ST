@@ -1,5 +1,5 @@
 const mongoose = require('mongoose');
-const validator = require('./validator');
+const validator = require('validator');
 
 const blogSchema = new mongoose.Schema({
   id: {
@@ -19,13 +19,18 @@ const blogSchema = new mongoose.Schema({
   difficulty: {
     type: Number,
     required: [true, 'A blog must have a difficulty'],
-    validate: [validator.isDifficulty, 'Provide blog difficulty level'],
-  },
+    validate: {
+        validator: function(value) {
+        
+    },
+    message: 'Provide a blog difficulty level (1-5)'
+  }},
+
   description: {
     type: String,
     required: [true, 'A blog must have a description'],
     trim: true,
-  },
+  }
 });
 
 const Blog = mongoose.model('Blog', blogSchema);
