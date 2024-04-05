@@ -29,16 +29,23 @@ const importData = async () => {
   } catch (err) {
     console.log(err);
   }
+  process.exit();
 };
 
 // DELETING DATA FROM DATABASE
 const deleteData = async () => {
   try {
-    await Blog.deleteMany(blogs);
+    await Blog.deleteMany({});
     console.log('Data Successfully Deleted');
   } catch (err) {
     console.log(err);
   }
+  process.exit();
 };
 
-console.log(process.argv);
+if (process.argv[2] === '--import') {
+    importData ();
+}
+else if (process.argv[2] === '--delete') {
+    deleteData();
+}
