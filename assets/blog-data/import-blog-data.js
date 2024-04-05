@@ -16,7 +16,7 @@ mongoose
   })
   .then(() => console.log('DB Connection Successful'));
 
-//READ JSON FILE
+//READING JSON FILE
 const blogs = JSON.parse(
     fs.readFileSync(`${__dirname}/blogs-simple.json`, 'utf-8')
 );
