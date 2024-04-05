@@ -2,12 +2,12 @@ const mongoose = require('mongoose');
 
 const blogSchema = new mongoose.Schema({
   id: {
-    type: 'number',
+    type: number,
     required: [true, 'A blog must have an id'],
     unique: true,
   },
   title: {
-    type: 'string',
+    type: string,
     required: [true, 'A blog must have a title'],
     trim: true,
   },

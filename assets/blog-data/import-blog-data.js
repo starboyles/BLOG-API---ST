@@ -40,3 +40,5 @@ const deleteData = async () => {
     console.log(err);
   }
 };
+
+console.log(process.argv);
