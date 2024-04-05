@@ -21,7 +21,7 @@ const blogSchema = new mongoose.Schema({
     required: [true, 'A blog must have a difficulty'],
     validate: {
         validator: function(value) {
-        
+        return value >= 1 && value <= 5;
     },
     message: 'Provide a blog difficulty level (1-5)'
   }},
