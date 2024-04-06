@@ -3,7 +3,8 @@ const validator = require('validator');
 
 const blogSchema = new mongoose.Schema({
   id: {
-    type: Number,
+    type: mongoose.Schema.Types.ObjectId,
+    auto: true,
     required: [true, 'A blog must have an id'],
     unique: true,
   },
