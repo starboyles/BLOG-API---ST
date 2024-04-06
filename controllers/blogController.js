@@ -1,12 +1,12 @@
 const fs = require('fs');
 const blogRouter = require('../routes/blogRoutes');
 const Blog = require('../models/blogModel');
+const { Types } = require('mongoose');
 const filePath =
   '/Users/mac/Desktop/BE/ST-BLOG-API/assets/blog-data/blogs-simple.json';
 const blogs = JSON.parse(fs.readFileSync(filePath, 'utf-8'));
 
 exports.checkID = (req, res, next, val) => {
-  console.log('Blog id is ${val}');
   if (req.params.id * 1 > blogs.length) {
     return res.status(404).json({
       status: 'fail',
@@ -43,16 +43,25 @@ exports.getAllBlogs = async (req, res) => {
   }
 };
 
-
 exports.getBlog = async (req, res) => {
-  console.log(req.params);
-
-  const id = req.params.id * 1;
-  const blog = blogs.find((el) => el.id === id);
-  res.status(200).json({
-    status: 'Success',
-    data: { blog },
-  });
+  try {
+    const blog = await Blog.findById(req.params.id);
+    if (!blog) {
+      return res.status(404).json({
+        status: 'fail',
+        message: 'Blog not found',
+      });
+    }
+    res.status(200).json({
+      status: 'Success',
+      data: { blog },
+    });
+  } catch (err) {
+    res.status(404).json({
+      status: 'fail',
+      message: err.message,
+    });
+  }
 };
 
 exports.createBlogs = async (req, res) => {
@@ -72,13 +81,30 @@ exports.createBlogs = async (req, res) => {
   }
 };
 
-exports.updateBlog = (req, res) => {
-  res.status(200).json({
-    status: 'success',
-    data: {
-      blog: '<Updated Blog>',
-    },
-  });
+exports.updateBlog = async (req, res) => {
+  try {
+    const blog = await Blog.findByIdAndUpdate(req.params.id, req.body, {
+      new: true,
+      runValidators: true,
+    });
+    if (!blog) {
+      return res.status(404).json({
+        status: 'fail',
+        message: 'Blog not found',
+      });
+    }
+    res.status(200).json({
+      status: 'success',
+      data: {
+        blog,
+      },
+    });
+  } catch (err) {
+    res.status(400).json({
+      status: 'fail',
+      message: err.message,
+    });
+  }
 };
 
 exports.deleteBlog = (req, res) => {
