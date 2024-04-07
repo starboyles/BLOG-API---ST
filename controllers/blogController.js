@@ -86,7 +86,7 @@ exports.createBlogs = async (req, res) => {
 
 exports.updateBlog = async (req, res) => {
   try {
-    const blog = await Blog.findByIdAndUpdate(id, req.body);
+    const blog = await Blog.findByIdAndUpdate(req.params.id, req.body);
     if (!blog) {
       return res.status(404).json({
         status: 'fail',
