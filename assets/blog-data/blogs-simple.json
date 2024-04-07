@@ -3,42 +3,42 @@
     "_id": "5c88fa8cf4afda39709c2955",
     "title": "Introduction to Machine Learning Algorithms",
     "duration": 10,
-    "difficulty": "2",
+    "difficulty": 2,
     "description": "Machine learning algorithms are the backbone of modern artificial intelligence systems. In this blog post, we delve into various machine learning algorithms, including supervised and unsupervised learning techniques. We discuss their underlying principles, advantages, and limitations. Topics covered include linear regression, logistic regression, decision trees, random forests, support vector machines, k-nearest neighbors, clustering algorithms, neural networks, and more."
   },
   {
     "_id": "5c88fa8cf4afda39709c2960",
     "title": "Deep Dive into Web Development Frameworks",
     "duration": 8,
-    "difficulty": "5",
+    "difficulty": 5,
     "description": "In this blog post, we take a comprehensive look at various web development frameworks used by developers worldwide. From frontend frameworks like React, Angular, and Vue.js to backend frameworks like Express.js, Django, and Ruby on Rails, we cover the key features, advantages, and use cases of each framework. Additionally, we discuss the evolving landscape of web development and emerging trends in framework adoption."
   },
   {
     "_id": "5c88fa8cf4afda39709c2965",
     "title": "Deep Dive into Web Development Frameworks",
     "duration": 8,
-    "difficulty": "5",
+    "difficulty": 5,
     "description": "In this blog post, we take a comprehensive look at various web development frameworks used by developers worldwide. From frontend frameworks like React, Angular, and Vue.js to backend frameworks like Express.js, Django, and Ruby on Rails, we cover the key features, advantages, and use cases of each framework. Additionally, we discuss the evolving landscape of web development and emerging trends in framework adoption."
   },
   {
     "_id": "5c88fa8cf4afda39709c2970",
     "title": "Deep Dive into Web Development Frameworks",
     "duration": 8,
-    "difficulty": "3",
+    "difficulty": 3,
     "description": "In this blog post, we take a comprehensive look at various web development frameworks used by developers worldwide. From frontend frameworks like React, Angular, and Vue.js to backend frameworks like Express.js, Django, and Ruby on Rails, we cover the key features, advantages, and use cases of each framework. Additionally, we discuss the evolving landscape of web development and emerging trends in framework adoption."
   },
   {
     "_id": "5c88fa8cf4afda39709c2975",
     "title": "Deep Dive into Web Development Frameworks",
     "duration": 8,
-    "difficulty": "3",
+    "difficulty": 3,
     "description": "In this blog post, we take a comprehensive look at various web development frameworks used by developers worldwide. From frontend frameworks like React, Angular, and Vue.js to backend frameworks like Express.js, Django, and Ruby on Rails, we cover the key features, advantages, and use cases of each framework. Additionally, we discuss the evolving landscape of web development and emerging trends in framework adoption."
   },
   {
     "_id": "5c88fa8cf4afda39709c2980",
     "title": "Deep Dive into Web Development Frameworks",
     "duration": 8,
-    "difficulty": "1",
+    "difficulty": 1,
     "description": "In this blog post, we take a comprehensive look at various web development frameworks used by developers worldwide. From frontend frameworks like React, Angular, and Vue.js to backend frameworks like Express.js, Django, and Ruby on Rails, we cover the key features, advantages, and use cases of each framework. Additionally, we discuss the evolving landscape of web development and emerging trends in framework adoption."
   }
 ]
