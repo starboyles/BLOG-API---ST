@@ -1,4 +1,5 @@
 const fs = require('fs');
+const mongoose = require('mongoose');
 const blogRouter = require('../routes/blogRoutes');
 const Blog = require('../models/blogModel');
 const { Types } = require('mongoose');
@@ -53,13 +54,15 @@ exports.getBlog = async (req, res) => {
       });
     }
     res.status(200).json({
-      status: 'Success',
-      data: { blog },
+      status: 'success',
+      data: {
+        blog,
+      },
     });
-  } catch (err) {
-    res.status(404).json({
-      status: 'fail',
-      message: err.message,
+  } catch (error) {
+    res.status(500).json({
+      status: 'error',
+      message: error.message,
     });
   }
 };
@@ -83,7 +86,8 @@ exports.createBlogs = async (req, res) => {
 
 exports.updateBlog = async (req, res) => {
   try {
-    const blog = await Blog.findByIdAndUpdate(req.params.id, req.body, {
+    const id = mongoose.Types.ObjectId(req.params.id); // Convert string to ObjectID
+    const blog = await Blog.findByIdAndUpdate(id, req.body, {
       new: true,
       runValidators: true,
     });
