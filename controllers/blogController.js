@@ -86,11 +86,7 @@ exports.createBlogs = async (req, res) => {
 
 exports.updateBlog = async (req, res) => {
   try {
-    const id = mongoose.Types.ObjectId(req.params.id); // Convert string to ObjectID
-    const blog = await Blog.findByIdAndUpdate(id, req.body, {
-      new: true,
-      runValidators: true,
-    });
+    const blog = await Blog.findByIdAndUpdate(id, req.body);
     if (!blog) {
       return res.status(404).json({
         status: 'fail',
