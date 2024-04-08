@@ -17,14 +17,14 @@ exports.checkID = (req, res, next) => {
   next();
 };
 
-exports.checkBody = (req, res, next) => {
-  if (!req.body.title || !req.body.id)
-    return res.status(400).json({
-      status: 'fail',
-      message: 'Missing id or title',
-    });
-  next();
-};
+// exports.checkBody = (req, res, next) => {
+//   if (!req.body.title || !req.body.id)
+//     return res.status(400).json({
+//       status: 'fail',
+//       message: 'Missing id or title',
+//     });
+//   next();
+// };
 
 exports.getAllBlogs = catchAsync(async (req, res, next) => {
   try {
@@ -69,7 +69,14 @@ exports.getBlog = catchAsync (async (req, res, next) => {
 
 exports.createBlogs = catchAsync(async (req, res, next) => {
   try {
-    const newBlog = await Blog.create(req.body);
+    const newBlog = await Blog.create({
+      _id: new mongoose.Types.ObjectId(),
+      title:  req.body.title,
+      duration: req.body.duration,
+      difficulty: req.body.difficulty,
+      description: req.body.description
+    }
+    );
     res.status(201).json({
       status: 'Success',
       data: {
