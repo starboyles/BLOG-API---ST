@@ -3,11 +3,11 @@ const mongoose = require('mongoose');
 const blogRouter = require('../routes/blogRoutes');
 const Blog = require('../models/blogModel');
 const { Types } = require('mongoose');
-const filePath =
-  '/Users/mac/Desktop/BE/ST-BLOG-API/assets/blog-data/blogs-simple.json';
+const filePath = '/Users/mac/Desktop/BE/ST-BLOG-API/assets/blog-data/blogs-simple.json';
 const blogs = JSON.parse(fs.readFileSync(filePath, 'utf-8'));
+const catchAsync = require('./../utils/catchAsync');
 
-exports.checkID = (req, res, next, val) => {
+exports.checkID = (req, res, next) => {
   if (req.params.id * 1 > blogs.length) {
     return res.status(404).json({
       status: 'fail',
@@ -26,7 +26,7 @@ exports.checkBody = (req, res, next) => {
   next();
 };
 
-exports.getAllBlogs = async (req, res) => {
+exports.getAllBlogs = catchAsync(async (req, res, next) => {
   try {
     const blogs = await Blog.find();
     res.status(200).json({
@@ -42,9 +42,9 @@ exports.getAllBlogs = async (req, res) => {
       message: err.message,
     });
   }
-};
+});
 
-exports.getBlog = async (req, res) => {
+exports.getBlog = catchAsync (async (req, res, next) => {
   try {
     const blog = await Blog.findById(req.params.id);
     if (!blog) {
@@ -65,9 +65,9 @@ exports.getBlog = async (req, res) => {
       message: error.message,
     });
   }
-};
+});
 
-exports.createBlogs = async (req, res) => {
+exports.createBlogs = catchAsync(async (req, res, next) => {
   try {
     const newBlog = await Blog.create(req.body);
     res.status(201).json({
@@ -82,9 +82,9 @@ exports.createBlogs = async (req, res) => {
       message: err.message,
     });
   }
-};
+});
 
-exports.updateBlog = async (req, res) => {
+exports.updateBlog = catchAsync(async (req, res, next) => {
   try {
     const blog = await Blog.findByIdAndUpdate(req.params.id, req.body);
     if (!blog) {
@@ -105,9 +105,9 @@ exports.updateBlog = async (req, res) => {
       message: err.message,
     });
   }
-};
+});
 
-exports.deleteBlog = async (req, res) => {
+exports.deleteBlog = catchAsync(async (req, res, next) => {
   try {
     const blog = await Blog.findByIdAndDelete(req.params.id);
     if (!blog) {
@@ -126,4 +126,4 @@ exports.deleteBlog = async (req, res) => {
       message: err.message,
     });
   }
-};
+});
