@@ -10,7 +10,8 @@ blogRouter.param('id', blogController.checkID);
 blogRouter
   .route('/')
   .get(blogController.getAllBlogs)
-  .post(blogController.checkBody, blogController.createBlogs);
+  .post(//blogController.checkBody, 
+  blogController.createBlogs);
 
 blogRouter
   .route('/:id')
