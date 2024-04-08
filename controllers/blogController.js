@@ -3,7 +3,8 @@ const mongoose = require('mongoose');
 const blogRouter = require('../routes/blogRoutes');
 const Blog = require('../models/blogModel');
 const { Types } = require('mongoose');
-const filePath = '/Users/mac/Desktop/BE/ST-BLOG-API/assets/blog-data/blogs-simple.json';
+const filePath =
+  '/Users/mac/Desktop/BE/ST-BLOG-API/assets/blog-data/blogs-simple.json';
 const blogs = JSON.parse(fs.readFileSync(filePath, 'utf-8'));
 const catchAsync = require('./../utils/catchAsync');
 
@@ -44,7 +45,7 @@ exports.getAllBlogs = catchAsync(async (req, res, next) => {
   }
 });
 
-exports.getBlog = catchAsync (async (req, res, next) => {
+exports.getBlog = catchAsync(async (req, res, next) => {
   try {
     const blog = await Blog.findById(req.params.id);
     if (!blog) {
@@ -71,18 +72,21 @@ exports.createBlogs = catchAsync(async (req, res, next) => {
   try {
     const newBlog = await Blog.create({
       _id: new mongoose.Types.ObjectId(),
-      title:  req.body.title,
+      title: req.body.title,
       duration: req.body.duration,
       difficulty: req.body.difficulty,
-      description: req.body.description
-    }
-    );
-    res.status(201).json({
-      status: 'Success',
-      data: {
-        blog: newBlog,
-      },
+      description: req.body.description,
     });
+    newBlog
+    .save()
+    .then(result => {
+      res.status(201).json({
+        status: 'Success',
+        data: {
+          blog: result,
+        }
+      })
+    })
   } catch (err) {
     res.status(400).json({
       status: 'fail',
