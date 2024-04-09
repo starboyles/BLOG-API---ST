@@ -21,7 +21,7 @@ const userSchema = new mongoose.Schema({
     required: [true, 'Provide your email address'],
     unique: true,
     lowercase: true,
-    validate: [validator.isEmail, 'Provide a valid email'],
+    validate: [validator.isEmail, 'Provide a valid or unique email'],
   },
   password: {
     type: String,
@@ -32,7 +32,10 @@ const userSchema = new mongoose.Schema({
     type: String,
     required: [true, 'Confirm your password'],
     validate: {
-      
+      //Only works on CREATE and SAVE
+      validator: function(el) {
+      return el === this.password;
+      }
     }
   },
 });
