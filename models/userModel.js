@@ -35,10 +35,15 @@ const userSchema = new mongoose.Schema({
       //Only works on CREATE and SAVE
       validator: function(el) {
       return el === this.password;
-      }
+      },
+      message: 'Passwords are not the same'
     }
   },
 });
+
+userSchema.pre('save', function(next) {
+  if (!this.isModified('password')) return next();
+} )
 
 const User = mongoose.model('User', userSchema);
 
