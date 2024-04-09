@@ -71,7 +71,7 @@ exports.getBlog = catchAsync(async (req, res, next) => {
 exports.createBlogs = catchAsync(async (req, res, next) => {
   try {
     const newBlog = await Blog.create({
-      _id: new mongoose.Types.ObjectId(),
+      // id: new mongoose.Types.ObjectId(),
       title: req.body.title,
       duration: req.body.duration,
       difficulty: req.body.difficulty,
