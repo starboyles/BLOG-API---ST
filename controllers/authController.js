@@ -22,3 +22,8 @@ exports.signup = catchAsync(async (req, res, next) => {
     }, 
   });
 });
+
+exports.login = (req, res, next) => {
+  const email = req.body.email
+
+};
