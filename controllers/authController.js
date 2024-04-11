@@ -1,6 +1,7 @@
 const jwt = require('jsonwebtoken');
 const User = require('./../models/userModel');
 const catchAsync = require('./../utils/catchAsync');
+const AppError = require('./../utils/appError');
 
 exports.signup = catchAsync(async (req, res, next) => {
   const newUser = await User.create({
@@ -32,6 +33,10 @@ exports.login = (req, res, next) => {
 
   //check if user exits & password are correct
 
-  //send tooke to client if everything is on point
-
+  //send token to client if everything is on point
+    const token = '';
+    res.status(201).json({
+      status: 'success',
+        token 
+    });
 }};
