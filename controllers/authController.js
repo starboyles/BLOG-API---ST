@@ -24,6 +24,14 @@ exports.signup = catchAsync(async (req, res, next) => {
 });
 
 exports.login = (req, res, next) => {
-  const email = req.body.email
+  const { email, password } = req.body;
+  
+  //check if email and password do exist
+  if(!email || !password) {
+    next(new AppError('Provide email and password', 400));
 
-};
+  //check if user exits & password are correct
+
+  //send tooke to client if everything is on point
+
+}};
