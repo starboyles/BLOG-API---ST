@@ -11,54 +11,64 @@ exports.signup = catchAsync(async (req, res, next) => {
     passwordConfirm: req.body.passwordConfirm,
   });
 
-  const token = jwt.sign({ id: newUser._id }, process.env.JWT_SECRET,  {
-    expiresIn: process.env.JWT_EXPIRES_IN 
+  const token = jwt.sign({ id: newUser._id }, process.env.JWT_SECRET, {
+    expiresIn: process.env.JWT_EXPIRES_IN,
   });
 
   res.status(201).json({
     status: 'success',
     data: {
       token,
-        user: newUser
-    }, 
+      user: newUser,
+    },
   });
 });
 
 exports.login = (req, res, next) => {
   const { email, password } = req.body;
-  
+
   //check if email and password do exist
-  if(!email || !password) {
+  if (!email || !password) {
     res.status(404).json({
       status: 'fail',
-      message: "Provide email and password"
+      message: 'Provide email and password',
     });
-  }else{
-    User.find({email: req.body.email})
-    .exec()
-    .then(user => {
-      if(user.length<1){
-        return res.status(401).json({
-          message: 'User does not exist'
-        })
-      }
-  //send token to client if everything is on point  
-      const token = '';
-      res.status(201).json({
-        status: 'success',
-        token 
+  } else {
+    User.find({ email: req.body.email })
+      .exec()
+      .then((user) => {
+        if (user.length < 1) {
+          return res.status(401).json({
+            message: 'User does not exist',
+          });
+        }
+        //send token to client if everything is on point
+        const token = '';
+        res.status(201).json({
+          status: 'success',
+          token,
+        });
+      })
+      .catch((err) => {
+        console.log(err);
+        res.status(404).json({
+          status: 'fail',
+          message: 'An error occured whiles loggin in',
+        });
       });
-    })
-    .catch(err => {
-      console.log(err)
-      res.status(404).json({
-        status: 'fail',
-        message: "An error occured whiles loggin in" 
-      });
-    })
   }
 };
 
-exports.protect = catchAsync (async (req, res, next) => {
+exports.protect = catchAsync(async (req, res, next) => {
+  //Get token and check if its there
+  let token;
+  if (
+    req.headers.authorization &&
+    req.headers.authorization.startsWith('Bearer ')
+  ) {
+    token = req.headers.authorization.split(' ')[1];
+  }
+  console.log(token);
+
   next();
 });
