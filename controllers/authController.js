@@ -29,7 +29,6 @@ exports.login = (req, res, next) => {
   
   //check if email and password do exist
   if(!email || !password) {
-    // next(new AppError('Provide email and password', 400));
     res.status(404).json({
       status: 'fail',
       message: "Provide email and password"
@@ -43,7 +42,7 @@ exports.login = (req, res, next) => {
           message: 'User does not exist'
         })
       }
-  
+  //send token to client if everything is on point  
       const token = '';
       res.status(201).json({
         status: 'success',
@@ -54,11 +53,8 @@ exports.login = (req, res, next) => {
       console.log(err)
       res.status(404).json({
         status: 'fail',
-        message: "An error occured whiles logginn in" 
+        message: "An error occured whiles loggin in" 
       });
     })
   }
-  //check if user exits & password are correct
- 
-  //send token to client if everything is on point  
 };
