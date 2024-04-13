@@ -59,8 +59,6 @@ exports.login = (req, res, next) => {
   }
 };
 
-exports.protect = catchAsync ((req, res, next) => {
+exports.protect = catchAsync (async (req, res, next) => {
   next();
-  
-
 });
