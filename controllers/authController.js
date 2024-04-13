@@ -60,6 +60,7 @@ exports.login = (req, res, next) => {
 };
 
 exports.protect = catchAsync ((req, res, next) => {
-
+  next();
   
+
 });
