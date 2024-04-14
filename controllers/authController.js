@@ -73,4 +73,12 @@ exports.protect = catchAsync(async (req, res, next) => {
   if (!token) {
     return next(new AppError('You are not logged in. Login to access.', 401));
   }
+
+  //Verification token
+  jwt.verify(token, process.env.JWT_SECRET)
+
+
+
+  next();
 });
+
