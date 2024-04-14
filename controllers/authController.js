@@ -69,18 +69,22 @@ exports.protect = catchAsync(async (req, res, next) => {
   ) {
     token = req.headers.authorization.split(' ')[1];
   }
-  
+
   if (!token) {
     return next(new AppError('You are not logged in. Login to access.', 401));
   }
 
   //Verification token
- const decoded = await promisify(jwt.verify)(token, process.env.JWT_SECRET);
- console.log(decoded);
+  const decoded = await promisify(jwt.verify)(token, process.env.JWT_SECRET);
+  console.log(decoded);
 
- //Check if user exists
+  //Check if user exists
+  const freshUser = await User.findById(decoded.id);
+  if (!freshUser) {
+    return next(new AppError('The user belonging to this token does no longer exist'), 401);
+  }
+
+ //Check if user changed password after the token was issued
  
-
   next();
 });
-
