@@ -18,6 +18,7 @@ const handleValidationErrorDB = err => {
   const message = `Invalid input data. ${errors.join('. ')}`;
   return new AppError(message, 400);
 };
+const handleJWTError = err => new AppError('Invalid JWT Token','401');
 
 const sendErrorDev = (err, res) => {
   res.status(err.statusCode).json({
@@ -64,7 +65,7 @@ module.exports = (err, req, res, next) => {
     if (error.code === 11000) error = handleDuplicateFieldsDB(error);
     if (error.name === 'ValidationError')
       error = handleValidationErrorDB(error);
-    if (error.name === 'JsonWebTokenError') error = handleJWTErrorDB(error);
+    if (error.name === 'JsonWebTokenError') error = handleJWTError(error);
 
     sendErrorProd(error, res);
   }
