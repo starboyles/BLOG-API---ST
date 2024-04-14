@@ -60,7 +60,7 @@ exports.login = (req, res, next) => {
 };
 
 exports.protect = catchAsync(async (req, res, next) => {
-  //Get token and check if its there
+  // Get token and check if it's there
   let token;
   if (
     req.headers.authorization &&
@@ -69,6 +69,8 @@ exports.protect = catchAsync(async (req, res, next) => {
     token = req.headers.authorization.split(' ')[1];
   }
   console.log(token);
-
-  next();
+  
+  if (!token) {
+    return next(new AppError('You are not logged in. Login to access.', 401));
+  }
 });
