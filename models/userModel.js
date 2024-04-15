@@ -57,7 +57,10 @@ userSchema.pre('save', async function(next) {
 });
 
 userSchema.methods.changedPasswordAfter = function(JWTTimestamp) {
-
+ if(this.passwordChangedAt) {
+  console(this.passwordChangedAt, JWTTimestamp);
+ }
+ return false;
 }
 
 
