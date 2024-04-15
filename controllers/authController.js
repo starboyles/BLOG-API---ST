@@ -85,6 +85,7 @@ exports.protect = catchAsync(async (req, res, next) => {
   }
 
  //Check if user changed password after the token was issued
+  
  
   next();
 });
