@@ -4,7 +4,7 @@ const blogRouter = require('../routes/blogRoutes');
 const Blog = require('../models/blogModel');
 const { Types } = require('mongoose');
 const filePath =
-  '/Users/mac/Desktop/BE/ST-BLOG-API/assets/blog-data/blogs-simple.json';
+  './assets/blog-data/blogs-simple.json';
 const blogs = JSON.parse(fs.readFileSync(filePath, 'utf-8'));
 const catchAsync = require('./../utils/catchAsync');
 
