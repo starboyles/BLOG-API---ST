@@ -6,12 +6,6 @@ const bcrypt = require('bcryptjs');
 //id, name, email, password, passwordConfirm
 
 const userSchema = new mongoose.Schema({
-  _id: {
-    type: mongoose.Schema.Types.ObjectId,
-    auto: true,
-    required: [true, 'A user must have an id'],
-    unique: true,
-  },
   name: {
     type: String,
     required: [true, 'Make your name  known'],
